@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <link rel="stylesheet" href="admission_form.css">
+</head>
+<body>
+    <h2 id="A">School Admission Form</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        
+
+        <label>Full Name</label><br>
+        <input id="B" type="text" name="full_name" required>
+        <br><br>
+        <label>Email</label><br>
+        <input id="B" type="email" name="email" required>    
+        <br><br>
+        <label>Phone</label><br>
+        <input id="B" type="text" name="phone" required>
+        <br><br>
+        <label>DOB</label><br>
+        <input id="B" type="date" name="dob" required>
+        <br><br>
+        <label>Course</label><br>
+        <select id="C" name="course" required>
+        {% for c in courses %}
+        <option value="{{ c.id }}">{{ c.name }} - {{ c.fees }} Rs</option>
+        <option>python full stack</option>
+        <option>Data Science</option>
+        <option>Powered AI</option>
+        <option>Advanced Excel</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Address</label><br>
+    <textarea id="D" name="address" required></textarea><br><br>
+    <label>Marksheet</label><br>
+    <input type="file" name="marksheet"><br><br>
+    <button id="F" type="submit">Submit Admission</button>
+    </form>
+    <br>
+    <center><a href="/status/">Check Status</a></center>
+</body>
+</html>

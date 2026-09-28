@@ -1,0 +1,31 @@
+body{
+    font-family: sans-serif;
+    max-width: 500px;
+    margin: 30px auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+#A{
+    text-align: center;
+    color: aqua;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#B{
+    width: 100px;
+    height: 20px;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+#C{
+    width: 150px;
+}
+#D{
+    width: 100px;
+}
+#F{
+    width: 100px;
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+}

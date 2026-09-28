@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Check Status</title></head>
+<body style="font-family: sans-serif; text-align:center; margin-top:40px;">
+    <h2>Admission Status Check</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Apna Email likho" required style="padding:8px; width:250px;">
+        <button type="submit" style="padding:8px 15px;">Check</button>
+    </form>
+    <hr style="margin:20px;">
+    {% if students %}
+        {% for s in students %}
+            <div style="border:1px solid #333; padding:15px; margin:10px auto; width:300px; text-align:left;">
+                <p><b>Name:</b> {{ s.full_name }}</p>
+                <p><b>Course:</b> {{ s.course.name }}</p>
+                <p><b>Email:</b> {{ s.email }}</p>
+                <p><b>Status:</b> <span style="color:blue; font-weight:bold;">{{ s.status }}</span></p>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <br><br>
+    <a href="/">Back to Form</a>
+</body>
+</html>
